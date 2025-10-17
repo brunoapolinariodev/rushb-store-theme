@@ -43,4 +43,5 @@ document.addEventListener("DOMContentLoaded", function () {   // abre #1
     }, 800);                                                  // fecha #9
   });                                                         // fecha esperarCampoBusca #4
 });                                                           // fecha addEventListener #1
+
  </script>

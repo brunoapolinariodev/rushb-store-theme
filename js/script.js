@@ -1,47 +1,90 @@
-<script>
-document.addEventListener("DOMContentLoaded", function () {   // abre #1
-  function esperarCampoBusca(callback) {                      // abre #2
-    const check = setInterval(() => {                         // abre #3
-      const container = document.querySelector(...);
+document.addEventListener("DOMContentLoaded", function () {
+  function esperarCampoBusca(callback) {
+    const check = setInterval(() => {
+      const container = document.querySelector(
+        '[data-hover-element="header_search"], .header_search'
+      );
       if (container) {
         clearInterval(check);
         callback(container);
-      }                                                       // fecha if
-    }, 300);                                                  // fecha setInterval #3
-  }                                                           // fecha function #2
+      }
+    }, 300);
+  }
 
-  esperarCampoBusca((container) => {                          // abre #4
+  esperarCampoBusca((container) => {
     const typingLine = document.createElement("div");
-    // ...
-    function atualizarTexto() { ... }                         // abre/fecha interno
-    function iniciarCursor() { ... }                          // abre/fecha interno
-    function digitarFrase() {                                 // abre #5
+    typingLine.id = "rushb-typing";
+    typingLine.style.cssText = `
+      text-align: center;
+      font-family: 'Rubik', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: #f97316;
+      text-shadow: 0 0 8px rgba(249,115,22,0.8);
+      margin-top: 12px;
+      letter-spacing: 0.5px;
+      min-height: 26px;
+      transition: opacity 0.4s ease-in-out;
+    `;
+    container.parentElement.insertAdjacentElement("afterend", typingLine);
+
+    const frases = [
+      "A maior loja de camisetas de CS2 do Brasil! 🧢",
+      "Promoções de lançamento disponíveis 💥",
+      "Coleção Mirage e Dust2 já no ar 🔥",
+      "RushB Store — Vista seu jogo! ⚡",
+    ];
+
+    let i = 0,
+      j = 0,
+      cursor = true,
+      intervaloCursor;
+
+    function atualizarTexto() {
+      typingLine.textContent = frases[i].substring(0, j) + (cursor ? "|" : "");
+    }
+
+    function iniciarCursor() {
+      clearInterval(intervaloCursor);
+      intervaloCursor = setInterval(() => {
+        cursor = !cursor;
+        atualizarTexto();
+      }, 400);
+    }
+
+    function digitarFrase() {
       if (j < frases[i].length) {
-        // ...
+        j++;
+        atualizarTexto();
+        setTimeout(digitarFrase, 30);
       } else {
-        setTimeout(() => {                                    // abre #6
+        setTimeout(() => {
           typingLine.style.opacity = "0";
           clearInterval(intervaloCursor);
-          setTimeout(() => {                                  // abre #7
+          setTimeout(() => {
             i++;
             if (i < frases.length) {
-              // ...
+              j = 0;
+              typingLine.style.opacity = "1";
+              cursor = true;
+              atualizarTexto();
+              iniciarCursor();
+              digitarFrase();
             } else {
-              // ...
-              setTimeout(() => {                              // abre #8
+              typingLine.style.opacity = "1";
+              typingLine.textContent = frases[frases.length - 1];
+              setTimeout(() => {
                 typingLine.style.opacity = "0";
-              }, 2000);                                       // fecha #8
-            }                                                 // fecha else
-          }, 600);                                            // fecha #7
-        }, 1400);                                             // fecha #6
-      }                                                       // fecha if
-    }                                                         // fecha function #5
+              }, 2000);
+            }
+          }, 600);
+        }, 1400);
+      }
+    }
 
-    setTimeout(() => {                                        // abre #9
+    setTimeout(() => {
       iniciarCursor();
       digitarFrase();
-    }, 800);                                                  // fecha #9
-  });                                                         // fecha esperarCampoBusca #4
-});                                                           // fecha addEventListener #1
-
- </script>
+    }, 800);
+  });
+});

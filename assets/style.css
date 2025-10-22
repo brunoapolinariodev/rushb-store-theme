@@ -30,14 +30,12 @@
   transition: all 0.6s ease-in-out;
   animation: logoFadeIn 1s ease forwards;
 }
-
 @keyframes logoFadeIn {
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
 }
-
 #cabecalho img.logo:hover {
   transform: scale(1.05);
   filter: drop-shadow(0 0 15px rgba(249, 115, 22, 0.9))
@@ -53,19 +51,16 @@
   letter-spacing: 0.5px;
   cursor: pointer;
 }
-
 #cabecalho svg {
   stroke: #ffffff !important;
   transition: stroke 0.3s ease-in-out;
 }
-
 #cabecalho .servico:hover,
 #cabecalho .titulo:hover {
   color: #f97316 !important;
   transform: scale(1.08);
   text-shadow: 0 0 8px rgba(249, 115, 22, 0.8);
 }
-
 #cabecalho .servico:hover svg {
   stroke: #f97316 !important;
   transform: scale(1.15);
@@ -86,12 +81,10 @@
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.2),
     inset 0 0 6px rgba(249, 115, 22, 0.2);
 }
-
 #cabecalho [data-hover-element="header_search"] input::placeholder {
   color: rgba(255, 255, 255, 0.75) !important;
   font-style: italic;
 }
-
 #cabecalho [data-hover-element="header_search"]:hover,
 #cabecalho [data-hover-element="header_search"]:focus-within {
   background: rgba(249, 115, 22, 0.1) !important;
@@ -100,37 +93,36 @@
     0 0 24px rgba(255, 255, 255, 0.5), inset 0 0 10px rgba(249, 115, 22, 0.5);
   transform: scale(1.02);
 }
-
 #cabecalho [data-hover-element="header_search"] .lucide-search {
   stroke: #ffffff !important;
   stroke-width: 1.8;
   transition: all 0.3s ease;
 }
-
 #cabecalho [data-hover-element="header_search"]:hover .lucide-search {
   stroke: #f97316 !important;
   transform: scale(1.1);
 }
 
 /* =========================================================
-   ⚫ 2️⃣ MENU PRETO (ABAIXO DO HEADER)
+   ⚫ RUSHB MENU FIX FINAL
 ========================================================= */
 [data-hover-element="top_menus"] {
-  position: relative;
-  z-index: 9;
-  width: 100vw;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #000000 !important;
-  padding: 10px 0;
-  margin: 0 !important;
-  border: none !important;
-  box-shadow: none !important;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
   flex-wrap: wrap !important;
-  gap: 12px !important;
+  gap: 16px !important;
+  position: relative !important;
+  z-index: 9 !important;
+  width: 100vw !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  margin: 0 !important;
+  background: #000000 !important;
+  padding: 12px 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   overflow-x: auto !important;
   scrollbar-width: none;
 }
@@ -143,19 +135,31 @@
   font-weight: 600 !important;
   font-size: 15px !important;
   letter-spacing: 0.4px;
-  transition: color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   white-space: nowrap;
+  padding: 4px 10px !important;
+  border-radius: 6px;
 }
 [data-hover-element="top_menus"] a:hover {
   color: #f97316 !important;
   text-shadow: 0 0 8px rgba(249, 115, 22, 0.8);
+  background: rgba(249, 115, 22, 0.1);
 }
 
-/* === MENU MOBILE (SCROLL HORIZONTAL) === */
+/* Desktop fixo */
+@media (min-width: 1024px) {
+  [data-hover-element="top_menus"] {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 10 !important;
+  }
+}
+
+/* Mobile scroll */
 @media (max-width: 768px) {
   [data-hover-element="top_menus"] {
     justify-content: flex-start !important;
-    padding: 8px 10px !important;
+    padding: 10px !important;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     background: linear-gradient(90deg, #000000 0%, #7a3000 85%) !important;
@@ -168,30 +172,12 @@
   }
 }
 
-/* === MENU FIXADO (DESKTOP) === */
-@media (min-width: 1024px) {
-  [data-hover-element="top_menus"] {
-    position: sticky !important;
-    top: 0;
-    z-index: 8;
-  }
-}
-
 /* =========================================================
    🧩 3️⃣ CARROSSEL / BANNER PRINCIPAL
 ========================================================= */
 section[data-hover-element="carousel"] {
   margin-top: 0 !important;
   padding-top: 0 !important;
-  border: none !important;
-}
-
-/* =========================================================
-   🧱 4️⃣ AJUSTE DE ESTRUTURA GERAL
-========================================================= */
-header {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
   border: none !important;
 }
 
@@ -253,15 +239,6 @@ footer a:hover {
   color: #f97316 !important;
   text-shadow: 0 0 10px rgba(249, 115, 22, 0.6);
 }
-footer svg,
-footer path {
-  stroke: #ffffff !important;
-  transition: all 0.3s ease;
-}
-footer svg:hover {
-  stroke: #f97316 !important;
-  transform: scale(1.1);
-}
 
 /* =========================================================
    📲 6️⃣ RESPONSIVIDADE (CELULARES)
@@ -303,18 +280,7 @@ footer svg:hover {
   #cabecalho [data-hover-element="header_sideItems"] svg {
     display: inline-block !important;
   }
-  [data-hover-element="menu_mobile"],
-  [data-hover-element="top_menus"] {
-    display: block !important;
-    text-align: center !important;
-    width: 100%;
-  }
-  [data-hover-element="menu_mobile"] svg {
-    display: inline-block !important;
-    stroke: #ffffff !important;
-  }
-  footer,
-  [data-hover-element="footer"] {
+  footer {
     text-align: center !important;
     padding: 25px 10px !important;
   }

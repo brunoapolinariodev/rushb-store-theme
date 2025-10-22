@@ -1,13 +1,13 @@
 /* ============================
    ⚙️ RUSHB STORE THEME (MONTINK)
    Autor: @brunoapolinariodev
-   Última atualização: 2025-10-17 (Versão Estável)
+   Última atualização: 2025-10-21 (Versão Estável)
 ============================ */
 
 /* =========================================================
-   🧱 1️⃣  HEADER (TOPO GERAL DO SITE)
+   🧱 1️⃣ HEADER (TOPO GERAL DO SITE)
    ---------------------------------------------------------
-   Contém: gradiente de fundo, logo, ícones, busca e links.
+   Contém: gradiente, logo, ícones, busca e links.
    DOM: <header id="cabecalho"> ... </header>
 ========================================================= */
 #cabecalho {
@@ -19,11 +19,7 @@
   box-shadow: 0 2px 10px rgba(249, 115, 22, 0.25);
 }
 
-/* =========================================================
-   🎯 1.1  LOGO (CENTRALIZADO)
-   ---------------------------------------------------------
-   DOM: <img class="logo"> dentro do #cabecalho
-========================================================= */
+/* === 1.1 LOGO CENTRALIZADO === */
 #cabecalho img.logo {
   width: 380px !important;
   height: auto !important;
@@ -51,11 +47,7 @@
     drop-shadow(0 0 25px rgba(255, 255, 255, 0.2));
 }
 
-/* =========================================================
-   🔗 1.2  LINKS E ÍCONES DO TOPO
-   ---------------------------------------------------------
-   DOM: .servico, .titulo, svg dentro de #cabecalho
-========================================================= */
+/* === 1.2 LINKS E ÍCONES DO TOPO === */
 #cabecalho .servico,
 #cabecalho .titulo {
   color: #ffffff !important;
@@ -82,11 +74,7 @@
   transform: scale(1.15);
 }
 
-/* =========================================================
-   🔍 1.3  SEARCH BAR (CAMPO DE BUSCA)
-   ---------------------------------------------------------
-   DOM: [data-hover-element="header_search"]
-========================================================= */
+/* === 1.3 SEARCH BAR === */
 #cabecalho [data-hover-element="header_search"],
 #cabecalho [data-hover-element="header_search"] input {
   background: rgba(255, 255, 255, 0.08) !important;
@@ -102,13 +90,11 @@
     inset 0 0 6px rgba(249, 115, 22, 0.2);
 }
 
-/* Placeholder */
 #cabecalho [data-hover-element="header_search"] input::placeholder {
   color: rgba(255, 255, 255, 0.75) !important;
   font-style: italic;
 }
 
-/* Hover e foco */
 #cabecalho [data-hover-element="header_search"]:hover,
 #cabecalho [data-hover-element="header_search"]:focus-within {
   background: rgba(249, 115, 22, 0.1) !important;
@@ -118,7 +104,6 @@
   transform: scale(1.02);
 }
 
-/* Ícone da lupa */
 #cabecalho [data-hover-element="header_search"] .lucide-search {
   stroke: #ffffff !important;
   stroke-width: 1.8;
@@ -131,23 +116,7 @@
 }
 
 /* =========================================================
-   📱 1.4  RESPONSIVIDADE DO HEADER
-========================================================= */
-@media (max-width: 1024px) {
-  #cabecalho img.logo {
-    width: 320px !important;
-  }
-}
-@media (max-width: 768px) {
-  #cabecalho img.logo {
-    width: 260px !important;
-  }
-}
-
-/* =========================================================
-   ⚫ 2️⃣  MENU PRETO (ABAIXO DO HEADER)
-   ---------------------------------------------------------
-   DOM: <div data-hover-element="top_menus">...</div>
+   ⚫ 2️⃣ MENU PRETO (ABAIXO DO HEADER)
 ========================================================= */
 [data-hover-element="top_menus"] {
   position: relative;
@@ -155,7 +124,7 @@
   width: 100vw;
   left: 50%;
   transform: translateX(-50%);
-  background: #000000 !important; /* Preto sólido */
+  background: #000000 !important;
   padding: 10px 0;
   margin: 0 !important;
   border: none !important;
@@ -163,10 +132,7 @@
 }
 
 /* =========================================================
-   🧩 3️⃣  CARROSSEL / BANNER PRINCIPAL
-   ---------------------------------------------------------
-   DOM: <section data-hover-element="carousel">...</section>
-   → remove espaçamento pra colar o menu no banner
+   🧩 3️⃣ CARROSSEL / BANNER PRINCIPAL
 ========================================================= */
 section[data-hover-element="carousel"] {
   margin-top: 0 !important;
@@ -175,9 +141,7 @@ section[data-hover-element="carousel"] {
 }
 
 /* =========================================================
-   🧱 4️⃣  AJUSTE DE ESTRUTURA GERAL
-   ---------------------------------------------------------
-   remove espaçamento entre header → menu → banner
+   🧱 4️⃣ AJUSTE DE ESTRUTURA GERAL
 ========================================================= */
 header {
   margin-bottom: 0 !important;
@@ -186,12 +150,8 @@ header {
 }
 
 /* =========================================================
-   🌌 RUSHB STORE DARK FIX
-   ---------------------------------------------------------
-   Força fundo escuro global e neutraliza estilos brancos da Montink.
+   🌌 DARK FIX GLOBAL
 ========================================================= */
-
-/* 1️⃣ Corrige fundo do body e html */
 html,
 body {
   background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%) !important;
@@ -201,7 +161,6 @@ body {
   transition: background 0.4s ease;
 }
 
-/* 2️⃣ Neutraliza containers que voltam a branco */
 #root,
 .app,
 main,
@@ -215,20 +174,17 @@ div[class*="page"] {
   background-color: transparent !important;
 }
 
-/* 3️⃣ Força contraste de texto global */
 body * {
   color: #f5f5f5 !important;
 }
 
-/* 4️⃣ Corrige fundo branco do header Montink inline */
 #cabecalho[style] {
   background: linear-gradient(90deg, #000000 0%, #7a3000 85%) !important;
   background-color: transparent !important;
 }
+
 /* =========================================================
-   🧩 5️⃣  FOOTER (RODAPÉ) — MESMO GRADIENTE DO HEADER
-   ---------------------------------------------------------
-   Mantém a identidade RushB (preto → laranja queimado)
+   🧩 5️⃣ FOOTER (RODAPÉ) — MESMO GRADIENTE DO HEADER
 ========================================================= */
 footer,
 #rodape,
@@ -242,7 +198,6 @@ footer,
   transition: all 0.4s ease-in-out;
 }
 
-/* Textos e links */
 footer a,
 footer p,
 footer span,
@@ -258,7 +213,6 @@ footer a:hover {
   text-shadow: 0 0 10px rgba(249, 115, 22, 0.6);
 }
 
-/* Ícones */
 footer svg,
 footer path {
   stroke: #ffffff !important;
@@ -270,9 +224,93 @@ footer svg:hover {
   transform: scale(1.1);
 }
 
-/* Responsivo */
+/* =========================================================
+   📲 6️⃣ RESPONSIVIDADE (CELULARES)
+========================================================= */
 @media (max-width: 768px) {
-  footer {
+  /* Header centralizado */
+  #cabecalho {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 8px 0 !important;
+    gap: 8px !important;
+  }
+
+  #cabecalho img.logo {
+    width: 200px !important;
+    height: auto !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Campo de busca */
+  #cabecalho [data-hover-element="header_search"] {
+    order: 3;
+    width: 90% !important;
+    margin: 0 auto !important;
+  }
+
+  #cabecalho [data-hover-element="header_search"] input {
+    font-size: 14px !important;
+    padding: 8px 14px !important;
+  }
+
+  /* Ícones */
+  #cabecalho [data-hover-element="header_sideItems"] {
+    order: 2;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 16px !important;
+  }
+
+  /* Remove duplicações */
+  [data-hover-element="menu_mobile"] svg,
+  [data-hover-element="menu_mobile"] .servico {
+    display: none !important;
+  }
+
+  #cabecalho [data-hover-element="header_sideItems"] svg {
+    display: inline-block !important;
+  }
+
+  /* Reativa menu mobile */
+  [data-hover-element="menu_mobile"],
+  [data-hover-element="top_menus"] {
+    display: block !important;
+    text-align: center !important;
+    width: 100%;
+  }
+
+  [data-hover-element="menu_mobile"] svg {
+    display: inline-block !important;
+    stroke: #ffffff !important;
+  }
+
+  /* Footer */
+  footer,
+  [data-hover-element="footer"] {
+    text-align: center !important;
     padding: 25px 10px !important;
+  }
+
+  footer a,
+  footer p,
+  footer li {
+    display: block !important;
+    margin-bottom: 6px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* Smartphones pequenos */
+@media (max-width: 480px) {
+  #cabecalho img.logo {
+    width: 170px !important;
+  }
+
+  #cabecalho [data-hover-element="header_search"] {
+    width: 95% !important;
   }
 }

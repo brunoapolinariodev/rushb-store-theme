@@ -33,11 +33,11 @@
    - Define tamanho, alinhamento e animação da logo RushB
 ========================================================= */
 #cabecalho img.logo {
-  width: 380px !important;         /* Tamanho fixo da logo */
-  height: auto !important;         /* Mantém proporção original */
-  display: block !important;       /* Garante que ocupe a linha toda */
-  margin: 0 auto !important;       /* Centraliza horizontalmente */
-  object-fit: contain !important;  /* Evita distorção */
+  width: 380px !important; /* Tamanho fixo da logo */
+  height: auto !important; /* Mantém proporção original */
+  display: block !important; /* Garante que ocupe a linha toda */
+  margin: 0 auto !important; /* Centraliza horizontalmente */
+  object-fit: contain !important; /* Evita distorção */
   filter: drop-shadow(0 0 6px rgba(249, 115, 22, 0.4)); /* Brilho suave */
   transition: transform 0.3s ease-in-out; /* Animação leve */
 }
@@ -55,11 +55,11 @@
 ========================================================= */
 #cabecalho .servico,
 #cabecalho .titulo {
-  color: #fff !important;                 /* Texto branco */
-  font-weight: 500 !important;            /* Peso médio (antes era 600 = muito bold) */
-  font-family: 'Prompt', sans-serif !important; /* Fonte moderna e limpa */
-  letter-spacing: 0.3px;                 /* Espaço sutil entre letras */
-  transition: all 0.3s ease-in-out;      /* Efeito suave ao interagir */
+  color: #fff !important; /* Texto branco */
+  font-weight: 500 !important; /* Peso médio (antes era 600 = muito bold) */
+  font-family: "Prompt", sans-serif !important; /* Fonte moderna e limpa */
+  letter-spacing: 0.3px; /* Espaço sutil entre letras */
+  transition: all 0.3s ease-in-out; /* Efeito suave ao interagir */
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.4); /* Dá leve profundidade sem parecer bold */
 }
 
@@ -67,14 +67,14 @@
 #cabecalho .servico:hover,
 #cabecalho .titulo:hover {
   color: #f97316 !important; /* Fica laranja ao passar o mouse */
-  transform: scale(1.08);    /* Aumenta levemente */
+  transform: scale(1.08); /* Aumenta levemente */
   text-shadow: 0 0 6px rgba(249, 115, 22, 0.6); /* Brilho alaranjado */
 }
 
 /* Estilo padrão dos ícones SVG (telefone, carrinho, etc.) */
 #cabecalho svg {
-  stroke: #fff !important;              /* Ícone branco */
-  transition: stroke 0.3s ease-in-out;  /* Suaviza a mudança de cor */
+  stroke: #fff !important; /* Ícone branco */
+  transition: stroke 0.3s ease-in-out; /* Suaviza a mudança de cor */
 }
 
 /* Ícones ficam laranja no hover */
@@ -82,6 +82,34 @@
   stroke: #f97316 !important;
 }
 
+/* ============================
+   🔍 RUSHB STORE - SEARCH BAR (CLEAN)
+   ============================ */
+
+[data-hover-element="header_search"] {
+  background: transparent !important;
+  border: 1px solid #ffffff !important;
+  border-radius: 4px !important;
+  color: #ffffff !important;
+  font-family: "Prompt", sans-serif !important;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 🔸 placeholder “Search” */
+[data-hover-element="header_search"] input::placeholder {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* 🔸 ícone da lupa */
+[data-hover-element="header_search"] svg {
+  stroke: #ffffff !important;
+}
+
+/* 🔸 hover ou foco → leve toque RushB */
+[data-hover-element="header_search"]:hover,
+[data-hover-element="header_search"]:focus-within {
+  border-color: #f97316 !important;
+}
 
 /* =========================================================
    🌌 BACKGROUND GLOBAL

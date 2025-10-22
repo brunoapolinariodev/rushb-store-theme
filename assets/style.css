@@ -5,53 +5,83 @@
 ============================ */
 
 /* =========================================================
-   🧱 HEADER (TOPO)
+   🧱 HEADER (TOPO GERAL DO SITE)
+   - Controla o fundo, sombra e espaçamento do cabeçalho.
 ========================================================= */
 #cabecalho {
+  /* Gradiente horizontal do preto pro laranja queimado */
   background: linear-gradient(90deg, #000000 0%, #7a3000 90%) !important;
+
+  /* Cor padrão do texto dentro do header */
   color: #ffffff !important;
+
+  /* Linha fina abaixo do header pra separar do restante do site */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  /* Sombra sutil alaranjada pra dar destaque */
   box-shadow: 0 2px 10px rgba(249, 115, 22, 0.25);
+
+  /* Espaçamento interno (topo/baixo) */
   padding: 10px 0;
+
+  /* Transição suave quando algum estilo muda (hover, etc) */
   transition: all 0.4s ease-in-out;
 }
 
-/* === LOGO === */
+/* =========================================================
+   🧩 LOGO PRINCIPAL
+   - Define tamanho, alinhamento e animação da logo RushB
+========================================================= */
 #cabecalho img.logo {
-  width: 380px !important;
-  height: auto !important;
-  display: block !important;
-  margin: 0 auto !important;
-  object-fit: contain !important;
-  filter: drop-shadow(0 0 6px rgba(249, 115, 22, 0.4));
-  transition: transform 0.3s ease-in-out;
-}
-#cabecalho img.logo:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 15px rgba(249, 115, 22, 0.9));
+  width: 380px !important;         /* Tamanho fixo da logo */
+  height: auto !important;         /* Mantém proporção original */
+  display: block !important;       /* Garante que ocupe a linha toda */
+  margin: 0 auto !important;       /* Centraliza horizontalmente */
+  object-fit: contain !important;  /* Evita distorção */
+  filter: drop-shadow(0 0 6px rgba(249, 115, 22, 0.4)); /* Brilho suave */
+  transition: transform 0.3s ease-in-out; /* Animação leve */
 }
 
-/* === ÍCONES / LINKS === */
+/* Animação ao passar o mouse na logo */
+#cabecalho img.logo:hover {
+  transform: scale(1.05); /* Aumenta levemente o tamanho */
+  filter: drop-shadow(0 0 15px rgba(249, 115, 22, 0.9)); /* Brilho intenso */
+}
+
+/* =========================================================
+   🔗 ÍCONES E LINKS (MENU SUPERIOR)
+   - Controla o estilo dos textos e ícones do topo
+   - Ex: “Entre em Contato”, “Carrinho de Compras”, etc.
+========================================================= */
 #cabecalho .servico,
 #cabecalho .titulo {
-  color: #fff !important;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  transition: all 0.3s ease-in-out;
+  color: #fff !important;                 /* Texto branco */
+  font-weight: 500 !important;            /* Peso médio (antes era 600 = muito bold) */
+  font-family: 'Prompt', sans-serif !important; /* Fonte moderna e limpa */
+  letter-spacing: 0.3px;                 /* Espaço sutil entre letras */
+  transition: all 0.3s ease-in-out;      /* Efeito suave ao interagir */
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.4); /* Dá leve profundidade sem parecer bold */
 }
+
+/* Efeito ao passar o mouse */
 #cabecalho .servico:hover,
 #cabecalho .titulo:hover {
-  color: #f97316 !important;
-  transform: scale(1.08);
-  text-shadow: 0 0 6px rgba(249, 115, 22, 0.6);
+  color: #f97316 !important; /* Fica laranja ao passar o mouse */
+  transform: scale(1.08);    /* Aumenta levemente */
+  text-shadow: 0 0 6px rgba(249, 115, 22, 0.6); /* Brilho alaranjado */
 }
+
+/* Estilo padrão dos ícones SVG (telefone, carrinho, etc.) */
 #cabecalho svg {
-  stroke: #fff !important;
-  transition: stroke 0.3s ease-in-out;
+  stroke: #fff !important;              /* Ícone branco */
+  transition: stroke 0.3s ease-in-out;  /* Suaviza a mudança de cor */
 }
+
+/* Ícones ficam laranja no hover */
 #cabecalho .servico:hover svg {
   stroke: #f97316 !important;
 }
+
 
 /* =========================================================
    🌌 BACKGROUND GLOBAL

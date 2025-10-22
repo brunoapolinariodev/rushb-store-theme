@@ -72,47 +72,6 @@
   transform: scale(1.15);
 }
 
-/* === SEARCH BAR === */
-#cabecalho [data-hover-element="header_search"],
-#cabecalho [data-hover-element="header_search"] input {
-  background: rgba(255, 255, 255, 0.08) !important;
-  border: 2px solid rgba(255, 255, 255, 0.9) !important;
-  border-radius: 25px !important;
-  padding: 10px 20px !important;
-  color: #ffffff !important;
-  font-size: 15px !important;
-  font-weight: 500;
-  outline: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2),
-    inset 0 0 6px rgba(249, 115, 22, 0.2);
-}
-
-#cabecalho [data-hover-element="header_search"] input::placeholder {
-  color: rgba(255, 255, 255, 0.75) !important;
-  font-style: italic;
-}
-
-#cabecalho [data-hover-element="header_search"]:hover,
-#cabecalho [data-hover-element="header_search"]:focus-within {
-  background: rgba(249, 115, 22, 0.1) !important;
-  border-color: #ffffff !important;
-  box-shadow: 0 0 16px rgba(249, 115, 22, 0.6),
-    0 0 24px rgba(255, 255, 255, 0.5), inset 0 0 10px rgba(249, 115, 22, 0.5);
-  transform: scale(1.02);
-}
-
-#cabecalho [data-hover-element="header_search"] .lucide-search {
-  stroke: #ffffff !important;
-  stroke-width: 1.8;
-  transition: all 0.3s ease;
-}
-
-#cabecalho [data-hover-element="header_search"]:hover .lucide-search {
-  stroke: #f97316 !important;
-  transform: scale(1.1);
-}
-
 /* =========================================================
    🧩 3️⃣ CARROSSEL / BANNER PRINCIPAL
 ========================================================= */

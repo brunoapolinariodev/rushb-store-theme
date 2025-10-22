@@ -122,21 +122,161 @@ body {
 }
 
 /* =========================================================
-   🦶 FOOTER
+   🧱 FOOTER — Estrutura base e estilo geral
+   =========================================
+   - Fundo com gradiente laranja/preto (identidade RushB)
+   - Borda superior leve
+   - Sombra sutil para separação do conteúdo
 ========================================================= */
 footer,
 #rodape,
 [data-hover-element="footer"] {
   background: linear-gradient(90deg, #000000 0%, #7a3000 90%) !important;
   color: #fff !important;
-  text-align: center;
   padding: 40px 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 -2px 10px rgba(249, 115, 22, 0.25);
+
+  /* Removemos o alinhamento global centralizado
+     para evitar quebrar o layout das colunas */
+  text-align: left !important;
 }
+
+/* =========================================================
+   🧩 GRID PRINCIPAL DO FOOTER
+   =========================================
+   - Organiza as colunas de forma fluida e centralizada
+   - Mantém responsividade com flex-wrap
+   - Corrige desalinhamentos horizontais
+========================================================= */
+footer .flex.flex-wrap {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-evenly !important; /* distribui colunas de forma simétrica */
+  align-items: flex-start !important; /* mantém o topo alinhado */
+  gap: 40px !important; /* espaçamento entre colunas */
+  text-align: left !important; /* texto natural (esquerda) */
+}
+
+/* Cada coluna se adapta proporcionalmente */
+footer .flex.flex-col {
+  flex: 1 1 220px !important; /* cada coluna ocupa no mínimo 220px */
+  min-width: 200px; /* evita colunas muito pequenas em telas pequenas */
+}
+
+/* =========================================================
+   🧭 BLOCO DA LOGO E DESCRIÇÃO
+   =========================================
+   - Centraliza a marca e o texto
+   - Mantém proporção e hierarquia visual
+========================================================= */
+footer .flex.flex-col.gap-4 {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important; /* centraliza horizontalmente */
+  justify-content: center !important;
+  text-align: center !important; /* apenas aqui centralizamos */
+  gap: 12px !important;
+}
+
+/* Em telas grandes, move levemente a logo para equilibrar visual */
+@media (min-width: 1024px) {
+  footer .flex.flex-col.gap-4 {
+    margin-left: 40px !important;
+  }
+}
+
+/* =========================================================
+   🎨 LOGO (visual e proporção)
+========================================================= */
+footer img.logo {
+  width: 200px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto !important;
+  object-fit: contain !important;
+  filter: drop-shadow(
+    0 0 4px rgba(249, 115, 22, 0.3)
+  ); /* leve brilho laranja */
+  transition: none !important; /* sem animação */
+  transform: none !important;
+}
+
+/* =========================================================
+   🔗 LINKS DE COLUNAS
+   =========================================
+   - Mantém alinhamento natural
+   - Hover em laranja RushB
+========================================================= */
+footer .flex.flex-col.gap-8,
+footer [data-hover-element="useful_links"],
+footer [data-hover-element="links"] {
+  text-align: left !important;
+}
+
+footer a {
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
 footer a:hover {
-  color: #f97316 !important;
-  text-shadow: 0 0 8px rgba(249, 115, 22, 0.6);
+  color: #f97316 !important; /* cor principal RushB */
+  text-shadow: 0 0 8px rgba(249, 115, 22, 0.6); /* leve glow */
+}
+
+/* =========================================================
+   💡 ESPAÇAMENTO E HIERARQUIA GERAL
+========================================================= */
+footer {
+  padding-top: 60px !important; /* respiro superior */
+  padding-bottom: 40px !important;
+}
+
+/* Linha divisória acima do copyright */
+footer hr {
+  border: none;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  width: 90%;
+  margin: 50px auto 25px;
+  opacity: 0.4;
+}
+
+/* =========================================================
+   📛 COPYRIGHT E FRASE FINAL
+   =========================================
+   - Centralizado e com hierarquia leve
+   - Frase de efeito RushB Store
+========================================================= */
+footer small,
+footer .copyright {
+  display: block;
+  text-align: center !important;
+  margin-top: 10px;
+  font-size: 13px !important;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: "Prompt", sans-serif !important;
+  letter-spacing: 0.3px;
+}
+
+/* =========================================================
+   📱 RESPONSIVIDADE MOBILE
+   =========================================
+   - Empilha as colunas
+   - Mantém espaçamento e leitura confortável
+========================================================= */
+@media (max-width: 768px) {
+  footer .flex.flex-wrap {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 30px !important;
+  }
+
+  footer .flex.flex-col {
+    text-align: center !important;
+  }
 }
 
 /* =========================================================

@@ -6,9 +6,6 @@
 
 /* =========================================================
    🧱 1️⃣ HEADER (TOPO GERAL DO SITE)
-   ---------------------------------------------------------
-   Contém: gradiente, logo, ícones, busca e links.
-   DOM: <header id="cabecalho"> ... </header>
 ========================================================= */
 #cabecalho {
   background: linear-gradient(90deg, #000000 0%, #7a3000 85%) !important;
@@ -19,7 +16,7 @@
   box-shadow: 0 2px 10px rgba(249, 115, 22, 0.25);
 }
 
-/* === 1.1 LOGO CENTRALIZADO === */
+/* === LOGO === */
 #cabecalho img.logo {
   width: 380px !important;
   height: auto !important;
@@ -47,7 +44,7 @@
     drop-shadow(0 0 25px rgba(255, 255, 255, 0.2));
 }
 
-/* === 1.2 LINKS E ÍCONES DO TOPO === */
+/* === LINKS E ÍCONES === */
 #cabecalho .servico,
 #cabecalho .titulo {
   color: #ffffff !important;
@@ -74,7 +71,7 @@
   transform: scale(1.15);
 }
 
-/* === 1.3 SEARCH BAR === */
+/* === SEARCH BAR === */
 #cabecalho [data-hover-element="header_search"],
 #cabecalho [data-hover-element="header_search"] input {
   background: rgba(255, 255, 255, 0.08) !important;
@@ -129,6 +126,55 @@
   margin: 0 !important;
   border: none !important;
   box-shadow: none !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  overflow-x: auto !important;
+  scrollbar-width: none;
+}
+[data-hover-element="top_menus"]::-webkit-scrollbar {
+  display: none;
+}
+[data-hover-element="top_menus"] a {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  letter-spacing: 0.4px;
+  transition: color 0.3s ease-in-out;
+  white-space: nowrap;
+}
+[data-hover-element="top_menus"] a:hover {
+  color: #f97316 !important;
+  text-shadow: 0 0 8px rgba(249, 115, 22, 0.8);
+}
+
+/* === MENU MOBILE (SCROLL HORIZONTAL) === */
+@media (max-width: 768px) {
+  [data-hover-element="top_menus"] {
+    justify-content: flex-start !important;
+    padding: 8px 10px !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    background: linear-gradient(90deg, #000000 0%, #7a3000 85%) !important;
+  }
+  [data-hover-element="top_menus"] a {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    padding: 6px 14px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* === MENU FIXADO (DESKTOP) === */
+@media (min-width: 1024px) {
+  [data-hover-element="top_menus"] {
+    position: sticky !important;
+    top: 0;
+    z-index: 8;
+  }
 }
 
 /* =========================================================
@@ -160,7 +206,6 @@ body {
   scroll-behavior: smooth;
   transition: background 0.4s ease;
 }
-
 #root,
 .app,
 main,
@@ -173,18 +218,16 @@ div[class*="page"] {
   background: transparent !important;
   background-color: transparent !important;
 }
-
 body * {
   color: #f5f5f5 !important;
 }
-
 #cabecalho[style] {
   background: linear-gradient(90deg, #000000 0%, #7a3000 85%) !important;
   background-color: transparent !important;
 }
 
 /* =========================================================
-   🧩 5️⃣ FOOTER (RODAPÉ) — MESMO GRADIENTE DO HEADER
+   🧩 5️⃣ FOOTER — MESMO GRADIENTE DO HEADER
 ========================================================= */
 footer,
 #rodape,
@@ -197,7 +240,6 @@ footer,
   box-shadow: 0 -2px 10px rgba(249, 115, 22, 0.25);
   transition: all 0.4s ease-in-out;
 }
-
 footer a,
 footer p,
 footer span,
@@ -207,18 +249,15 @@ footer li {
   font-weight: 500;
   transition: color 0.3s ease;
 }
-
 footer a:hover {
   color: #f97316 !important;
   text-shadow: 0 0 10px rgba(249, 115, 22, 0.6);
 }
-
 footer svg,
 footer path {
   stroke: #ffffff !important;
   transition: all 0.3s ease;
 }
-
 footer svg:hover {
   stroke: #f97316 !important;
   transform: scale(1.1);
@@ -228,7 +267,6 @@ footer svg:hover {
    📲 6️⃣ RESPONSIVIDADE (CELULARES)
 ========================================================= */
 @media (max-width: 768px) {
-  /* Header centralizado */
   #cabecalho {
     display: flex !important;
     flex-direction: column !important;
@@ -237,26 +275,20 @@ footer svg:hover {
     padding: 8px 0 !important;
     gap: 8px !important;
   }
-
   #cabecalho img.logo {
     width: 200px !important;
     height: auto !important;
     margin-bottom: 6px !important;
   }
-
-  /* Campo de busca */
   #cabecalho [data-hover-element="header_search"] {
     order: 3;
     width: 90% !important;
     margin: 0 auto !important;
   }
-
   #cabecalho [data-hover-element="header_search"] input {
     font-size: 14px !important;
     padding: 8px 14px !important;
   }
-
-  /* Ícones */
   #cabecalho [data-hover-element="header_sideItems"] {
     order: 2;
     display: flex !important;
@@ -264,37 +296,28 @@ footer svg:hover {
     align-items: center !important;
     gap: 16px !important;
   }
-
-  /* Remove duplicações */
   [data-hover-element="menu_mobile"] svg,
   [data-hover-element="menu_mobile"] .servico {
     display: none !important;
   }
-
   #cabecalho [data-hover-element="header_sideItems"] svg {
     display: inline-block !important;
   }
-
-  /* Reativa menu mobile */
   [data-hover-element="menu_mobile"],
   [data-hover-element="top_menus"] {
     display: block !important;
     text-align: center !important;
     width: 100%;
   }
-
   [data-hover-element="menu_mobile"] svg {
     display: inline-block !important;
     stroke: #ffffff !important;
   }
-
-  /* Footer */
   footer,
   [data-hover-element="footer"] {
     text-align: center !important;
     padding: 25px 10px !important;
   }
-
   footer a,
   footer p,
   footer li {
@@ -303,13 +326,10 @@ footer svg:hover {
     font-size: 14px !important;
   }
 }
-
-/* Smartphones pequenos */
 @media (max-width: 480px) {
   #cabecalho img.logo {
     width: 170px !important;
   }
-
   #cabecalho [data-hover-element="header_search"] {
     width: 95% !important;
   }
